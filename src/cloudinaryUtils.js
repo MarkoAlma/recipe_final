@@ -1,7 +1,7 @@
 import axios from "axios";
 import imageCompression from "browser-image-compression";
 
-const API_URL="http://localhost:5000/api/"
+const API_URL="https://recipe-backend-puce.vercel.app/api/"
 
 //const API_URL="https://receptek-backend.vercel.app/api/"
 
