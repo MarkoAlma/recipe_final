@@ -5,7 +5,6 @@ import { FaHome } from 'react-icons/fa'
 import { useNavigate } from 'react-router'
 import { MyUserContext } from '../context/MyUserProvider'
 import { useEffect } from 'react'
-import MyToastify from '../components/MyToastify'
 
 const SignIn = () => {
 
@@ -38,7 +37,6 @@ const SignIn = () => {
             </div>
             {/* {msg && msg?.err && <p>{msg.err}</p>} */}
             <div><a href="" onClick={()=>navigate("/pwreset")}>Elfelejtett jelszó?</a></div>
-            {msg && <MyToastify {...msg} />}
           </div>
         </form>
       </div>

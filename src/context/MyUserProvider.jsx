@@ -41,8 +41,8 @@ const MyUserProvider = ({children}) => {
 
   const logoutUser = async ()=> {
     await signOut(auth)
-    setMsg({})
-    setUser(null)
+    setMsg({kijelentkezes:'Sikeres kijelentkezés!'})
+     setUser(null)
   }
 
   const signInUser = async (email, password) => {
@@ -50,13 +50,11 @@ const MyUserProvider = ({children}) => {
     try {
       const adat = await signInWithEmailAndPassword(auth, email, password)
       if (adat.user.emailVerified) {
-        setMsg({signIn:true})
-        
+        setMsg({signIn:true, kijelentkezes:'Sikeres bejelentkezés!'})
       }else {
         setMsg({err:"Nincs megerősítve az email!"})
             setUser(null)
       }
-    
       //
     } catch (error) {
       console.log(error);
@@ -85,10 +83,10 @@ const MyUserProvider = ({children}) => {
     const uploadResult=await uploadImage(file)
     if(uploadResult?.url) await updateProfile(auth.currentUser,{photoURL:uploadResult.url})
       //el kell tárolni a public_id-t:
-    await updateAvatar(user.uid,uploadResult.public_id)
+    // await updateAvatar(user.uid,uploadResult.public_id)
     setUser({...auth.currentUser}) //frissítjük a lokális state-t
     setMsg(null)
-    setMsg({updateProfile:"Sikeres profil módosítás!"})
+    setMsg({kijelentkezes:"Sikeres profilmódosítás!"})
   } catch (error) {
     setMsg({err:error.message})
   }
@@ -100,7 +98,7 @@ const MyUserProvider = ({children}) => {
     await reauthenticateWithCredential(auth.currentUser,credential)
     await deleteUser(auth.currentUser)
     setMsg(null)
-    setMsg({err:"Felhasználói fiók törölve!"})
+    setMsg({torles:"Felhasználói fiók törölve!"})
     setUser(null)
   } catch (error) {
     console.log(error);

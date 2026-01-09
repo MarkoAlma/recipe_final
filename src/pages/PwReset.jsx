@@ -3,7 +3,6 @@ import React from 'react'
 import { useContext } from 'react'
 import { useNavigate } from 'react-router'
 import { MyUserContext } from '../context/MyUserProvider'
-import MyToastify from '../components/MyToastify'
 import { FaHome } from 'react-icons/fa'
 
 const PwReset = () => {
@@ -35,7 +34,6 @@ const PwReset = () => {
               <button className='hoverke' style={{opacity:'1', position:'absolute', left:'0', top:'0', width:'100%', height:'100%', zIndex:'5', opacity:'0'}}>a</button>
             </div>
             {/* {msg && msg?.err && <p>{msg.err}</p>} */}
-            {msg && <MyToastify {...msg} />}
           </div>
         </form>
       </div>

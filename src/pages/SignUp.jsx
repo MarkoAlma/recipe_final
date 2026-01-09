@@ -4,8 +4,6 @@ import { useContext } from 'react'
 import { FaHome } from 'react-icons/fa'
 import { useNavigate } from 'react-router'
 import { MyUserContext } from '../context/MyUserProvider'
-import { useEffect } from 'react'
-import MyToastify from '../components/MyToastify'
 import { useState } from 'react'
 
 const SignUp = () => {
@@ -46,7 +44,6 @@ const SignUp = () => {
               <button disabled={loading} className='hoverke' style={{opacity:'1', position:'absolute', left:'0', top:'0', width:'100%', height:'100%', zIndex:'5', opacity:'0'}}>a</button>
             </div>
           {/* {msg && msg?.err && <p>{msg.err}</p>} */}
-          {msg && <MyToastify {...msg} />}
           </div>
         </form>
       </div>

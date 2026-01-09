@@ -9,8 +9,13 @@ import PwReset from './pages/PwReset'
 import {UserProfile} from './pages/UserProfile'
 import { ProtectedRoute } from './ProtectedRoute'
 import { NotFound } from './components/NotFound'
+import { useContext } from 'react'
+import { MyUserContext } from './context/MyUserProvider'
+import MyToastify from './components/MyToastify'
 
 function App() {
+
+    const {msg, setMsg} = useContext(MyUserContext)
 
   return (
     <>
@@ -25,6 +30,7 @@ function App() {
         <Route path='/userProfile' element={<ProtectedRoute><UserProfile /></ProtectedRoute> }></Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
+      {msg && <MyToastify {...msg} />}
     </>
   )
 }

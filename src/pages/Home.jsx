@@ -13,6 +13,7 @@ export const Home = () => {
         <h1 style={{color:'#32b0b9ff'}}>RecipeBook</h1>
         <Button style={{color:'white'}} onClick={()=>navigate("/recipes")}>Főzz, posztolj, inspirálj !</Button>
         <Login/>
+        
       </div>
     </div>
   )

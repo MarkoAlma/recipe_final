@@ -21,7 +21,7 @@ const Login = () => {
                 <img style={{width:"50px",height:"50px",borderRadius:"50%",objectFit:"cover"}} src={user.photoURL} alt="profilkép" />
             )}
             <div onClick={()=>navigate("/userProfile")} style={{display:'flex', cursor:"pointer", alignItems:'center', justifyContent:'center', fontWeight:'bold'}}>{user.displayName}</div>
-            <Button onClick={()=>logoutUser()} className='glass-btnka szove kij'>Kijlentkezés</Button>
+            <Button onClick={logoutUser} className='glass-btnka szove kij'>Kijelentkezés</Button>
         </div> :
         <div style={{display:'flex', gap:'20px'}}>
             <Button onClick={() => { navigate("/signin"); setMsg({});}}className='glass-btnka szove' >Bejelentezés</Button>
